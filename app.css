@@ -6,7 +6,6 @@ header {
     display: flex;
     width: 100%;
     height: 100%;
-    margin: 0;
 }
 
 body{
@@ -18,14 +17,19 @@ header {
     height: 10vh;
     width: 100%;
     background: rgb(248, 249, 250);
-
 }
+
+h1 {
+    margin-left: 0.5rem;
+    white-space: nowrap;
+}
+
 nav {
-    padding: 0.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    flex-wrap: nowrap;
 
 }
 
@@ -39,14 +43,18 @@ nav {
 .nav-icons {
     list-style: none;
     display: flex;
-    float: left;
-    margin-left: 1rem;
+    margin-right: 0.5rem;
     color: rgb(47, 161, 206);
 }
 
 li {
     letter-spacing: 0.1rem;
     margin-left: 1rem;
+    transition: 0.5s;
+}
+
+li:hover{
+    background-color: rgb(177, 216, 235);
 }
 
 .mobile-menu{
@@ -59,20 +67,38 @@ li {
     height: 10rem;
 }
 
-@media( max-width: 900px) {
+@media( max-width: 700px) {
     .nav-list {
         position: absolute;
-        top: 8vh;
-        right: 0;
+        top: 10vh;
+        background: rgb(248, 249, 250);
         flex-direction: column;
-        align-items: center;
         justify-content: space-around;
-        height: 5rem;
+        max-height: 0;
+        overflow: hidden;
+        font-size: 1rem;
+        transition: max-height 0.5s;
+        width: 100%;
+    }
+
+    .nav-list-show {
+        max-height: 10rem;
+        font-size: 1rem;
+    }
+
+    li {
+        transition: 0.5s;
+    }
+
+
+    li:hover{
+        background-color: rgb(177, 216, 235);
     }
     
     .mobile-menu{
         text-align: end;
         display: block;
+        margin-right: 0.5rem;
     }
 
     h1 {
